@@ -1,11 +1,10 @@
-
 zingchart.THEME="classic";
 
 var myConfig = {
     "type":"pie",
     "background-color":"#F2F2F0",
     "title":{
-        "text":"2015",
+        "text":"Applications for asylum received, 2015",
         "background-color":"none",
         "color":"#333",
 
@@ -41,8 +40,8 @@ var myConfig = {
         "negation":"currency",
         "thousandsSeparator":",",
         "shadow":0,
-                "caption": "2015",
-                "subCaption": "2015",
+                        "caption": "2015",
+                "subCaption": "Today",
                 "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
                 "bgColor": "#ffffff",
                 "showBorder": "0",
@@ -73,20 +72,45 @@ var myConfig = {
     },
     "series":[
         {
-            "text":"Children 0-19"+"<br>" + "22,7%",
-            "values":[2210796],
+            "text": "Age between 0-6",
+            "values":[18551],
             "background-color":"#CE8580"
         },
         {
-            "text":"Workforce 20-63" + "<br>" + "56,5%",
-            "values":[5505470],
-            "background-color":"rgba(0, 0, 0, 0.7)"
+            "text": "Age between 7-12",
+            "values":[12717],
+            "background-color":"#CE8580"
         },
         {
-            "text":"Elderly 64+" +"<br>"+"20,8%",
-            "values":[2027361],
-            "background-color":"#C4473F"
-        }
+            "text": "Age between 13-17",
+            "values":[39116],
+            "background-color":"#CE8580"
+        },
+        {
+            "text": "Age between 18-24",
+            "values":[28920],
+            "background-color":"#CE8580"
+        },
+        {
+            "text": "Age between 25-34",
+            "values":[35916],
+            "background-color":"#CE8580"
+        },
+        {
+            "text": "Age between 35-44",
+            "values":[16281],
+            "background-color":"#CE8580"
+        },
+        {
+            "text": "Age between 45-64",
+            "values":[9869],
+            "background-color":"rgba(0, 0, 0, 0.5)"
+        },
+        {
+            "text": "Age +64",
+            "values":[1507],
+            "background-color":"black"
+        },
     ]
 };
 
@@ -94,8 +118,8 @@ var myConfig = {
 
 
 zingchart.render({ 
-	id : 'chart1', 
+	id : 'nisse', 
 	data : myConfig, 
-	height: 300, 
-	width: 300 
+	height: 500, 
+	width: 725 
 });

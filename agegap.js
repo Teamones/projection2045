@@ -1,6 +1,6 @@
 angular
   .module('app', ['n3-line-chart'])
-          
+       
   .controller('MainCtrl', function($scope) {
     $scope.data = {
       dataset: [
@@ -8,7 +8,6 @@ angular
         {x: new Date("2025-01-01"), y: 38113, val_2: -89588, val_3: 127701},
         {x: new Date("2035-01-01"), y: 693191, val_2: -238239, val_3: 931430},
         {x: new Date("2045-01-01"), y: 754199,val_2: -334779, val_3: 1088978},
-        
        ]
      };
 
@@ -22,6 +21,7 @@ angular
           y: {
               max: 1100000,
               min: -400000,
+             
           },
     
       },
@@ -47,7 +47,7 @@ angular
           dataset: "dataset",
           key: 'y',
           type: ['line', 'dot', 'area'],
-          label: 'None Workforce',
+          label: 'No Workforce',
           color: "rgb(235, 12, 12)",
           interpolation: {mode: 'cardinal', tension: 0.7}
         },

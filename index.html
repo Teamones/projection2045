@@ -29,61 +29,75 @@
 
 <!-- webpage content goes here in the body -->
 
-  <div class="container">
+  <div class="container-fluid">
       
       
-    <h1>The Aging Population</h1><br><br>
+    <h1>Can immigration support the Swedish aging population?</h1><br><br>
       
       <div class="row">
           <div class="col-md-5">
-      <p>People in Sweden today live longer than they did before and the life length is steadily increasing for each year that goes by.<br> This is good news!
-          But can the workforce take the pressure?</p>
+     <p>
+Sweden has an aging population which comes with a problem. The workforce does not grow parallel with the growing aging population. The available workforce is decreasing and will have to support more people over time. This is not economically sustainable.
+</p>
           </div>
           
-          <div class="col-md-5"><p>
-Unfortunately, the aging population comes with a problem. The workforce does not grow parallel with the growing aging population. The available workforce does not increase but will have to support more people. This is not economically sustainable.
-</p>
+          <div class="col-md-4">
       </div>
-          <div class="col-md-2" id="workforce"><h5> Workforce</h5> 
-              <p>  people who work and are in the ages between 20-63 years.</p></div>
+        
           </div>
+    </div>
+    <div class="container-fluid">
     <div class="row" ng-app="app" ng-controller="MainCtrl">
-        <h4>The following graph show you what would happen to Sweden's workforce without immigration</h4>
-    <div class="col-md-12" id="linecharthej">
+        <h4>The following graphs show you what would happen to Sweden's workforce without immigration</h4><br>
+    <div class="col-md-6" id="linecharthej">
   <linechart data="data" options="options"></linechart>
      <script src="agegap.js"> 
-</script>
+</script></div>
+        <div class="col-md-3" id="chart1">
+         <script src="piechart2015.js"></script> 
+        
     </div>
-        </div>
-    <div class="row" id="contentrow">
+        <div class="col-md-3" id="chart4">
+         <script src="piechart2045.js"></script> 
+        
+    </div>
+     
   
-  <!-- GRAPH ONE -->
-  <div class="col-md-6">
-<!-- END GRAPH ONE -->
-
-      <p>Over the next coming 30 years from 2015 to 2045 the workforce in Sweden will be reduced by 5% and the non working force will grow with 5% which means a shift of almost 1 million from working force to non working force. </p>
-      </div>
-        
-        <div class="col-md-6"><p>At the same time, by 2045, as the workforce in Sweden will reduce itself with 5%, the population will grow 4.3%. 
-This means that a shrinking workforce have to support more people. This is not economically sustainable.</p>
-        </div>
-        
-        </div>
       
       
-      
+      <!--
       <br><br><div class="row">
       
-      <div zingchart class="col-md-3" id="chart1" zc-json="myJson" zc-width="100%" zc-height="100%"><script src="piechart2015.js"></script> </div>
-      </div> <br><br> <br><br> <br><br>
+      <div zingchart class="col-md-6" id="chart1" zc-json="myJson" zc-width="100%" zc-height="100%"><script src="piechart2015.js"></script> </div>
+       
+      <div zingchart class="col-md-6" id="chart4" zc-json="myJson"><script src="piechart2045.js"></script> </div>
+      
+      
+      </div> !-->
+        <div class="row" id="contentrow">
+  
+ 
+  <div class="col-md-12">
+      <p>Over the next coming 30 years from 2015 to 2045 the workforce in Sweden will be reduced by 5% and the non working force will grow with 5% which means a shift of more than 1 million from working force to non working force. </p>
+      </div>
+        
+       
+        
+        </div>
+        <br><br><br>
+      <div class="row">
+        <div class="col-md-2" id="nisse"><script src="nisseschart.js"></script></div>
+      <div class="col-md-2">
+       <p>Today there is a lot of people coming to Sweden due to crisis in the world.
+These people are a real asset for Sweden. Since most of the immigrants coming to Sweden are in a working age they can fill the economic gap that evolves in the workforce when the Swedish population gets older.</p>
+          </div>
+    </div>
+      </div>
   <!-- GRAPH two -->
  
 <!-- END GRAPH two -->
-      <p>Today there is a lot of people coming to Sweden due to crisis in the world.
-These people are a real asset for Sweden. Since most of the immigrants coming to Sweden are in a working age they can fill the economic gap that evolves in the workforce when the Swedish population gets older.</p>
-    
 
   </div>
-  
+    </body>
 </html> 
 

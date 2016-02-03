@@ -5,7 +5,7 @@ var myConfig = {
     "type":"pie",
     "background-color":"#F2F2F0",
     "title":{
-        "text":"2015",
+        "text":"2035",
         "background-color":"none",
         "color":"#333",
 
@@ -41,8 +41,7 @@ var myConfig = {
         "negation":"currency",
         "thousandsSeparator":",",
         "shadow":0,
-                "caption": "2015",
-                "subCaption": "2015",
+                       
                 "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
                 "bgColor": "#ffffff",
                 "showBorder": "0",
@@ -52,7 +51,6 @@ var myConfig = {
                 "startingAngle": "0",
                 "showPercentValues": "1",
                 "showPercentInTooltip": "0",
-                "decimals": "1",
                 "captionFontSize": "14",
                 "subcaptionFontSize": "14",
                 "subcaptionFontBold": "0",
@@ -74,18 +72,18 @@ var myConfig = {
     "series":[
         {
             "text":"Children 0-19"+"<br>" + "22,7%",
-            "values":[2210796],
+            "values":[2320064],
             "background-color":"#CE8580"
         },
         {
-            "text":"Workforce 20-63" + "<br>" + "56,5%",
-            "values":[5505470],
-            "background-color":"rgba(0, 0, 0, 0.7)"
+            "text":"Workforce 20-63" + "<br>" + "51,6%",
+            "values":[5267231],
+            "background-color":"#C4473F"
         },
         {
-            "text":"Elderly 64+" +"<br>"+"20,8%",
-            "values":[2027361],
-            "background-color":"#C4473F"
+            "text":"Elderly 64+" +"<br>"+"25,6%",
+            "values":[2611283],
+            "background-color":"#442C2B"
         }
     ]
 };
@@ -94,8 +92,9 @@ var myConfig = {
 
 
 zingchart.render({ 
-	id : 'chart1', 
+	id : 'chart3', 
 	data : myConfig, 
 	height: 300, 
 	width: 300 
 });
+
