@@ -1,52 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
 
-<!-- your webpage info goes here -->
-
-    <title>Lise Haack</title>
-  
-  <meta name="author" content="your name" />
-  <meta name="description" content="" />
-
-<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->  
-  <link rel="stylesheet" href="style.css" type="text/css" />
-  <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<!-- CSS !-->
+<!--  <link rel="stylesheet" href="style.css" type="text/css" /> !-->
+    
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
   <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  
+     <link rel="stylesheet" href="node_modules/n3-charts/build/LineChart.css">
+    
+   <!-- Reference AngularJS and D3.js -->
+    <script src="node_modules/n3-charts/node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/n3-charts/node_modules/d3/d3.min.js"></script>
+    <!-- Reference n3-line-chart -->
+    <script src="node_modules/n3-charts/build/LineChart.js"></script>
+   
+    <!-- zinchart !-->
+<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+    <script type="text/javascript">
+      angular.module('app', ['n3-line-chart'])
+     
+    </script>
 </head>
 <body>
 
 <!-- webpage content goes here in the body -->
 
-  <div class="pageWrapper">
-    <h1>The Aging Population</h1>
-    <div class="img-container">
-      <img src="img/bild1.png" />
-    </div>
-    <p>People in Sweden today live longer than they did before and the life length is steadily increasing for each year that goes by. This is good news!
-But can the workforce take the pressure? Workforce = people who work and are in the ages between 20-63 years.
+  <div class="container">
+      
+      
+    <h1>The Aging Population</h1><br><br>
+      
+      <div class="row">
+          <div class="col-md-5">
+      <p>People in Sweden today live longer than they did before and the life length is steadily increasing for each year that goes by.<br> This is good news!
+          But can the workforce take the pressure?</p>
+          </div>
+          
+          <div class="col-md-5"><p>
 Unfortunately, the aging population comes with a problem. The workforce does not grow parallel with the growing aging population. The available workforce does not increase but will have to support more people. This is not economically sustainable.
-The following graph show you what would happen to Sweden’s workforce without immigration:</p>
+</p>
+      </div>
+          <div class="col-md-2" id="workforce"><h5> Workforce</h5> 
+              <p>  people who work and are in the ages between 20-63 years.</p></div>
+          </div>
+    <div class="row" ng-app="app" ng-controller="MainCtrl">
+        <h4>The following graph show you what would happen to Sweden's workforce without immigration</h4>
+    <div class="col-md-12" id="linecharthej">
+  <linechart data="data" options="options"></linechart>
+     <script src="agegap.js"> 
+</script>
+    </div>
+        </div>
+    <div class="row" id="contentrow">
   
   <!-- GRAPH ONE -->
-    <div class="img-container">
-      <img src="img/bild2.png" />
-    </div>
+  <div class="col-md-6">
 <!-- END GRAPH ONE -->
 
-  <p>Over the next coming 30 years from 2015 to 2045 the workforce in Sweden will be reduced by 5% and the non working force will grow with 5% which means a shift of almost 1 million from working force to non working force. At the same time, by 2045, as the workforce in Sweden will reduce itself with 5%, the population will grow 4.3%. 
+      <p>Over the next coming 30 years from 2015 to 2045 the workforce in Sweden will be reduced by 5% and the non working force will grow with 5% which means a shift of almost 1 million from working force to non working force. </p>
+      </div>
+        
+        <div class="col-md-6"><p>At the same time, by 2045, as the workforce in Sweden will reduce itself with 5%, the population will grow 4.3%. 
 This means that a shrinking workforce have to support more people. This is not economically sustainable.</p>
+        </div>
+        
+        </div>
+      
+      
+      
+      <br><br><div class="row">
+      
+      <div zingchart class="col-md-3" id="chart1" zc-json="myJson" zc-width="100%" zc-height="100%"><script src="piechart2015.js"></script> </div>
+      </div> <br><br> <br><br> <br><br>
   <!-- GRAPH two -->
-    <div class="img-container">
-      <img src="img/bild4.png" />
-    </div>
+ 
 <!-- END GRAPH two -->
       <p>Today there is a lot of people coming to Sweden due to crisis in the world.
 These people are a real asset for Sweden. Since most of the immigrants coming to Sweden are in a working age they can fill the economic gap that evolves in the workforce when the Swedish population gets older.</p>
     
 
   </div>
-  <p>Source: <a href="http://www.scb.se/sv_/Hitta-statistik/Artiklar/Har-hamnar-dina-gamla-klader" target="_blank">SCB</a>
+  
 </html> 
 
