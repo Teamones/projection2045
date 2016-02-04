@@ -1,6 +1,6 @@
 angular
   .module('app', ['n3-line-chart'])
-       
+  
   .controller('MainCtrl', function($scope) {
     $scope.data = {
       dataset: [
@@ -10,13 +10,16 @@ angular
         {x: new Date("2045-01-01"), y: 754199,val_2: -334779, val_3: 1088978},
        ]
      };
-
+ 
     $scope.options = {
+  
       axes: {
+       
         x: {
           key: "x",
             type: "date",
            ticks: ("2015, 2025, 2035, 2045")
+            
         },
           y: {
               max: 1100000,
@@ -25,6 +28,7 @@ angular
           },
     
       },
+           
         grid: {
             x: true,
             y: true,
@@ -42,6 +46,7 @@ angular
           })
         }
       },
+  
       series: [
                {
           dataset: "dataset",

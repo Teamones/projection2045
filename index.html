@@ -6,6 +6,7 @@
 <!--  <link rel="stylesheet" href="style.css" type="text/css" /> !-->
     
     <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
     
   <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
      <link rel="stylesheet" href="node_modules/n3-charts/build/LineChart.css">
@@ -24,15 +25,102 @@
       angular.module('app', ['n3-line-chart'])
      
     </script>
+       <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+          // Load the Visualization API and the piechart package.
+          google.load('visualization', '1.0', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.setOnLoadCallback(drawChart);
+
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+
+            // workforce 2015
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');    
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Workforce 20-63', 5505470],
+              ['Elderly +64', 2027361],
+              ['Children 0-19', 2210796],
+            ]);
+            // workforce 2045
+            var data2 = new google.visualization.DataTable();
+            data2.addColumn('string', 'Topping');
+            data2.addColumn('number', 'Slices');
+            data2.addRows([
+              ['Workforce 20-63', 5170691],
+              ['Elderly +64', 2652733],
+              ['Children 0-19', 2339624],
+            ]);
+            // IMMIGRANTS 2015
+            var data3 = new google.visualization.DataTable();
+            data3.addColumn('string', 'Topping');
+            data3.addColumn('number', 'Slices');
+            data3.addRows([
+            ['Age between 0-17', 70384],
+            ['Age between 18-34', 64836],
+            ['Age between 35-64', 26150],
+            ['Age +64', 1507],
+            ]);
+
+            // Set chart options
+            var options = {'title':'2015',
+                           'titleTextStyle': {fontSize: 24},
+                           'width':400,
+                           'height':300,
+                            pieHole: 0.4,
+                        legend: {position: 'top', maxLines: 2},
+                        
+                        
+                        
+                         
+                            colors: ['#494948', '#C4473F', '#CE8580', '#f45b00', '#8e0000']
+                          };
+            // Set chart options
+            var options2 = {'title':'2045',
+                            'titleTextStyle': {fontSize: 24},
+                           'width':400,
+                           'height':300,
+                           pieHole: 0.4,
+                               legend: {position: 'top', maxLines: 2},
+                            
+                          
+                           colors: ['#494948', '#C4473F', '#CE8580', '#f45b00', '#8e0000']
+                         };
+                         // Set BIG chart options
+            var options3 = {'title':'2015',
+                           'width':550,
+                           'height':350,
+                           pieHole: 0.4,
+                           colors: ['#494948', '#494948', '#a80b0b', '#e82424']
+                         };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+            chart.draw(data, options);
+            var chart2 = new google.visualization.PieChart(document.getElementById('chart2'));
+            chart2.draw(data2, options2);
+            var chart3 = new google.visualization.PieChart(document.getElementById('chart3'));
+            chart3.draw(data3, options3);
+            
+
+          }
+        </script>
 </head>
 <body>
 
 <!-- webpage content goes here in the body -->
 
-  <div class="container-fluid">
+  <div class="container">
       
       
-    <h1>Can immigration support the Swedish aging population?</h1><br><br>
+    <h1><strong>Can immigration support the Swedish aging population?</strong></h1><br><br>
       
       <div class="row">
           <div class="col-md-5">
@@ -45,35 +133,30 @@ Sweden has an aging population which comes with a problem. The workforce does no
       </div>
         
           </div>
+       <h3>The following graphs show you what would happen to Sweden's workforce without immigration</h3><br>
     </div>
     <div class="container-fluid">
     <div class="row" ng-app="app" ng-controller="MainCtrl">
-        <h4>The following graphs show you what would happen to Sweden's workforce without immigration</h4><br>
+       
     <div class="col-md-6" id="linecharthej">
   <linechart data="data" options="options"></linechart>
      <script src="agegap.js"> 
 </script></div>
         <div class="col-md-3" id="chart1">
-         <script src="piechart2015.js"></script> 
+        
         
     </div>
-        <div class="col-md-3" id="chart4">
-         <script src="piechart2045.js"></script> 
+        <div class="col-md-3" id="chart2">
+      
         
     </div>
      
   
       
-      
-      <!--
-      <br><br><div class="row">
-      
-      <div zingchart class="col-md-6" id="chart1" zc-json="myJson" zc-width="100%" zc-height="100%"><script src="piechart2015.js"></script> </div>
-       
-      <div zingchart class="col-md-6" id="chart4" zc-json="myJson"><script src="piechart2045.js"></script> </div>
-      
-      
-      </div> !-->
+      </div> 
+    </div>
+    <br>
+    <div class="container">
         <div class="row" id="contentrow">
   
  
@@ -85,9 +168,12 @@ Sweden has an aging population which comes with a problem. The workforce does no
         
         </div>
         <br><br><br>
+        <h2>Ages of people applying for asylum in Sweden</h2>
       <div class="row">
-        <div class="col-md-2" id="nisse"><script src="nisseschart.js"></script></div>
-      <div class="col-md-2">
+        <div class="col-md-4" id="chart3"></div>
+          <div class="col-md-1"></div>
+      <div class="col-md-4">
+          <br><br>
        <p>Today there is a lot of people coming to Sweden due to crisis in the world.
 These people are a real asset for Sweden. Since most of the immigrants coming to Sweden are in a working age they can fill the economic gap that evolves in the workforce when the Swedish population gets older.</p>
           </div>
